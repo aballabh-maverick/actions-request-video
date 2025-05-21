@@ -24,7 +24,7 @@ const DownloadWidget = () => {
         <div className="flex-1">
           <h3 className="text-lg font-medium text-gray-900 mb-1">Start Application Form</h3>
           <p className="text-gray-600 text-sm">
-            Start your application process by filing the form
+            Start your application process by filing the form & kicking off your journey towards a great carrer outcome.
           </p>
         </div>
         <div className="ml-4 flex-shrink-0">
