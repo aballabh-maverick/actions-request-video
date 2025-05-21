@@ -13,7 +13,7 @@ const Index = () => {
 
       <main className="flex-1 container mx-auto p-4 max-w-md flex items-center justify-center">
         <div className="w-full">
-          <h2 className="text-2xl font-bold text-center mb-6">Educational Resources</h2>
+          <h2 className="text-2xl font-bold text-center mb-6">Sure let me help you with the request.</h2>
           <DownloadWidget />
         </div>
       </main>
