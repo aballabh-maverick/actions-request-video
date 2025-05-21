@@ -29,17 +29,43 @@ const DownloadWidget = () => {
         </div>
         <div className="ml-4 flex-shrink-0">
           <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='180' viewBox='0 0 140 180' fill='none'%3E%3Crect width='140' height='180' rx='10' fill='%23E5DEFF'/%3E%3Cpath fill='%237E69AB' d='M0 10C0 4.477 4.477 0 10 0h120c5.523 0 10 4.477 10 10v170c0 5.523-4.477 10-10 10H10c-5.523 0-10-4.477-10-10V10z'/%3E%3Crect x='10' y='10' width='120' height='160' rx='6' fill='white' stroke='%237E69AB' stroke-width='1'/%3E%3Cpath d='M30 40h80M30 35h50M25 160h90' stroke='%239b87f5' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M70 25 A12 12 0 1 0 70 1 A12 12 0 1 0 70 25 Z' fill='%23D6BCFA'/%3E%3Ctext x='64' y='19' font-family='Arial' font-size='14' fill='%237E69AB' font-weight='bold'%3EV%3C/text%3E%3Crect x='25' y='50' width='90' height='30' rx='4' fill='%239b87f5' opacity='0.2'/%3E%3Cpath d='M30 70h80M30 60h70' stroke='%239b87f5' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='25' y='90' width='90' height='60' rx='4' fill='%23D6BCFA' opacity='0.3'/%3E%3Cpath d='M40 110h60M40 120h50M40 130h40' stroke='%237E69AB' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='110' cy='110' r='10' fill='%239b87f5' opacity='0.6'/%3E%3Cpath d='M105 110l3 3 7-7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M35 145 L35 95 M35 145 L45 135 M35 145 L25 135' stroke='%237E69AB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-              alt="Application form illustration" 
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="140" 
+              height="180" 
+              viewBox="0 0 140 180" 
+              fill="none"
               className="w-28 h-36 object-contain rounded hover:animate-none animate-pulse"
-              onError={(e) => {
-                // Fallback to a simple illustration if the image fails to load
-                const target = e.target as HTMLImageElement;
-                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='80' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E";
-                target.className = "w-28 h-36 object-contain";
-              }}
-            />
+            >
+              {/* Form background with purple gradient */}
+              <rect width="140" height="180" rx="10" fill="#E5DEFF"/>
+              <path fill="#7E69AB" d="M0 10C0 4.477 4.477 0 10 0h120c5.523 0 10 4.477 10 10v170c0 5.523-4.477 10-10 10H10c-5.523 0-10-4.477-10-10V10z"/>
+              
+              {/* White paper sheet */}
+              <rect x="10" y="10" width="120" height="160" rx="6" fill="white" stroke="#7E69AB" strokeWidth="1"/>
+              
+              {/* Form lines */}
+              <path d="M30 40h80M30 35h50M25 160h90" stroke="#9b87f5" strokeWidth="2" strokeLinecap="round"/>
+              
+              {/* College/Verification badge */}
+              <path d="M70 25 A12 12 0 1 0 70 1 A12 12 0 1 0 70 25 Z" fill="#D6BCFA"/>
+              <text x="64" y="19" fontFamily="Arial" fontSize="14" fill="#7E69AB" fontWeight="bold">V</text>
+              
+              {/* Form fields */}
+              <rect x="25" y="50" width="90" height="30" rx="4" fill="#9b87f5" opacity="0.2"/>
+              <path d="M30 70h80M30 60h70" stroke="#9b87f5" strokeWidth="2" strokeLinecap="round"/>
+              
+              {/* Form text area */}
+              <rect x="25" y="90" width="90" height="60" rx="4" fill="#D6BCFA" opacity="0.3"/>
+              <path d="M40 110h60M40 120h50M40 130h40" stroke="#7E69AB" strokeWidth="2" strokeLinecap="round"/>
+              
+              {/* Checkmark/completion element */}
+              <circle cx="110" cy="110" r="10" fill="#9b87f5" opacity="0.6"/>
+              <path d="M105 110l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+              {/* Arrow pointing to form indicating action */}
+              <path d="M35 145 L35 95 M35 145 L45 135 M35 145 L25 135" stroke="#7E69AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
         </div>
       </div>
