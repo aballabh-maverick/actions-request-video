@@ -115,8 +115,7 @@ const DownloadWidget = () => {
             onClick={handlePlayVideo}
             className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors transform hover:scale-[1.02] duration-200"
           >
-            <Play className="mr-2 h-4 w-4" />
-            Watch Now
+            Continue with VidyaGPT
           </button>
         </div>
       </div>
