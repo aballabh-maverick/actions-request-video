@@ -38,16 +38,16 @@ const DownloadWidget = () => {
           </p>
         </div>
         <div className="ml-4 flex-shrink-0">
-          <div className="bg-white rounded-lg p-2 shadow-sm">
+          <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
               alt="Education brochure preview" 
-              className="w-16 h-20 object-cover rounded"
+              className="w-24 h-32 object-cover rounded animate-pulse"
               onError={(e) => {
                 // Fallback to a simple illustration if the image fails to load
                 const target = e.target as HTMLImageElement;
                 target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='80' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E";
-                target.className = "w-16 h-20 object-contain";
+                target.className = "w-24 h-32 object-contain";
               }}
             />
           </div>
@@ -56,7 +56,7 @@ const DownloadWidget = () => {
       <button
         onClick={handleDownload}
         disabled={downloading}
-        className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors"
+        className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors transform hover:scale-[1.02] duration-200"
       >
         {downloading ? (
           <div className="flex items-center">
