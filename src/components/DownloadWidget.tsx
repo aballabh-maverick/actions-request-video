@@ -1,47 +1,37 @@
 
 import React, { useState } from "react";
-import { Download } from "lucide-react";
+import { FileText } from "lucide-react";
 import { toast } from "sonner";
 
 const DownloadWidget = () => {
-  const [downloading, setDownloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleDownload = () => {
-    setDownloading(true);
+  const handleApply = () => {
+    setLoading(true);
     
-    // Simulate download delay
+    // Simulate a brief delay before redirecting
     setTimeout(() => {
-      setDownloading(false);
+      setLoading(false);
       
-      // Show success toast
-      toast.success(
-        "Sure! Here's the latest brochure with all the details about our programs, campus, and admissions. Hope this gives a detailed overview of the institute's admission process & career options? Good Luck!"
-      );
-      
-      // Simulate file download
-      const link = document.createElement("a");
-      link.href = "#"; // In a real app, this would point to your actual PDF file
-      link.setAttribute("download", "institute_brochure.pdf");
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, 1500);
+      // Open the application website in a new tab
+      window.open("https://www.extraaedge.ai", "_blank");
+    }, 1000);
   };
 
   return (
     <div className="rounded-lg bg-gray-50 p-4 my-4 max-w-md">
       <div className="flex items-start">
         <div className="flex-1">
-          <h3 className="text-lg font-medium text-gray-900 mb-1">Download Brochure</h3>
+          <h3 className="text-lg font-medium text-gray-900 mb-1">Start Application Form</h3>
           <p className="text-gray-600 text-sm">
-            Access our brochure for detailed information about our programs.
+            Start your application process by filing the form
           </p>
         </div>
         <div className="ml-4 flex-shrink-0">
           <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
             <img 
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='180' viewBox='0 0 140 180' fill='none'%3E%3Crect width='140' height='180' rx='10' fill='%23E5DEFF'/%3E%3Cpath fill='%237E69AB' d='M0 10C0 4.477 4.477 0 10 0h120c5.523 0 10 4.477 10 10v170c0 5.523-4.477 10-10 10H10c-5.523 0-10-4.477-10-10V10z'/%3E%3Crect x='10' y='10' width='120' height='160' rx='6' fill='white' stroke='%237E69AB' stroke-width='1'/%3E%3Cpath d='M30 40h80M30 35h50M25 160h90' stroke='%239b87f5' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M70 25 A12 12 0 1 0 70 1 A12 12 0 1 0 70 25 Z' fill='%23D6BCFA'/%3E%3Ctext x='64' y='19' font-family='Arial' font-size='14' fill='%237E69AB' font-weight='bold'%3EV%3C/text%3E%3Crect x='25' y='50' width='90' height='30' rx='4' fill='%239b87f5' opacity='0.2'/%3E%3Cpath d='M30 70h80M30 60h70' stroke='%239b87f5' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='25' y='90' width='90' height='60' rx='4' fill='%23D6BCFA' opacity='0.3'/%3E%3Cpath d='M40 110h60M40 120h50M40 130h40' stroke='%237E69AB' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='110' cy='110' r='10' fill='%239b87f5' opacity='0.6'/%3E%3Cpath d='M105 110l3 3 7-7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M35 145 L35 95 M35 145 L45 135 M35 145 L25 135' stroke='%237E69AB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-              alt="Institute brochure illustration" 
+              alt="Application form illustration" 
               className="w-28 h-36 object-contain rounded hover:animate-none animate-pulse"
               onError={(e) => {
                 // Fallback to a simple illustration if the image fails to load
@@ -54,22 +44,22 @@ const DownloadWidget = () => {
         </div>
       </div>
       <button
-        onClick={handleDownload}
-        disabled={downloading}
+        onClick={handleApply}
+        disabled={loading}
         className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors transform hover:scale-[1.02] duration-200"
       >
-        {downloading ? (
+        {loading ? (
           <div className="flex items-center">
             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            Downloading...
+            Redirecting...
           </div>
         ) : (
           <>
-            <Download className="mr-2 h-4 w-4" />
-            Download
+            <FileText className="mr-2 h-4 w-4" />
+            Apply Now
           </>
         )}
       </button>
