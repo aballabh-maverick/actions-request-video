@@ -38,16 +38,16 @@ const DownloadWidget = () => {
           </p>
         </div>
         <div className="ml-4 flex-shrink-0">
-          <div className="bg-gray-200 rounded-full p-4">
+          <div className="bg-white rounded-lg p-2 shadow-sm">
             <img 
-              src="/lovable-uploads/cca82697-20aa-4e37-9a3c-f6a80cb9aa80.png" 
-              alt="Illustration" 
-              className="w-16 h-16 object-contain"
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300&auto=format&fit=crop"
+              alt="Education brochure preview" 
+              className="w-16 h-20 object-cover rounded"
               onError={(e) => {
                 // Fallback to a simple illustration if the image fails to load
                 const target = e.target as HTMLImageElement;
-                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'%3E%3C/path%3E%3Cpolyline points='7 10 12 15 17 10'%3E%3C/polyline%3E%3Cline x1='12' y1='15' x2='12' y2='3'%3E%3C/line%3E%3C/svg%3E";
-                target.className = "w-16 h-16";
+                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='80' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E";
+                target.className = "w-16 h-20 object-contain";
               }}
             />
           </div>
