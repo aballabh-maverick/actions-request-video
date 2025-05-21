@@ -40,9 +40,9 @@ const DownloadWidget = () => {
         <div className="ml-4 flex-shrink-0">
           <div className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
-              alt="Education brochure preview" 
-              className="w-24 h-32 object-cover rounded animate-pulse"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='180' viewBox='0 0 140 180' fill='none'%3E%3Crect width='140' height='180' rx='10' fill='%23E5DEFF'/%3E%3Crect x='20' y='20' width='100' height='10' rx='2' fill='%237E69AB'/%3E%3Crect x='20' y='40' width='80' height='6' rx='2' fill='%239b87f5'/%3E%3Crect x='20' y='55' width='100' height='6' rx='2' fill='%239b87f5'/%3E%3Crect x='20' y='70' width='90' height='6' rx='2' fill='%239b87f5'/%3E%3Crect x='20' y='95' width='100' height='40' rx='4' fill='%23D6BCFA'/%3E%3Cpath d='M35 115L45 105M45 105L55 115M45 105V125' stroke='%237E69AB' stroke-width='2'/%3E%3Cpath d='M75 115C75 110.582 78.5817 107 83 107C87.4183 107 91 110.582 91 115C91 119.418 87.4183 123 83 123' stroke='%237E69AB' stroke-width='2'/%3E%3Cpath d='M83 123V115' stroke='%237E69AB' stroke-width='2'/%3E%3Crect x='20' y='145' width='60' height='6' rx='2' fill='%239b87f5'/%3E%3Crect x='20' y='160' width='40' height='6' rx='2' fill='%239b87f5'/%3E%3C/svg%3E"
+              alt="Education brochure illustration" 
+              className="w-24 h-32 object-contain rounded animate-pulse"
               onError={(e) => {
                 // Fallback to a simple illustration if the image fails to load
                 const target = e.target as HTMLImageElement;
