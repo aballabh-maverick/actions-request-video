@@ -69,66 +69,56 @@ const DownloadWidget = () => {
 
   return (
     <>
-      <div className="rounded-lg bg-gray-50 p-4 my-4 max-w-md">
-        <div className="flex items-start">
-          <div className="flex-1">
-            <h3 className="text-lg font-medium text-gray-900 mb-1">Watch the Institute Video</h3>
-            <p className="text-gray-600 text-sm">
-              The video will cover the details about the institute helping you make the right career decision.
-            </p>
-          </div>
-          <div className="ml-4 flex-shrink-0">
-            <div 
-              className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 cursor-pointer"
-              onClick={handlePlayVideo}
-            >
+      <div className="rounded-lg bg-gray-50 p-4 my-4 w-full max-w-4xl mx-auto">
+        <div className="flex flex-col">
+          <h3 className="text-lg font-medium text-gray-900 mb-3">Watch the Institute Video</h3>
+          
+          <div 
+            className="relative w-full cursor-pointer group"
+            onClick={handlePlayVideo}
+          >
+            <div className="aspect-video w-full bg-gray-900 rounded-lg overflow-hidden">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                width="140" 
-                height="180" 
-                viewBox="0 0 140 180" 
-                fill="none"
-                className="w-28 h-36 object-contain rounded hover:animate-none animate-pulse"
+                viewBox="0 0 16 9" 
+                className="w-full h-full"
               >
                 {/* Video thumbnail background with gradient */}
-                <rect width="140" height="180" rx="10" fill="#1A1F2C"/>
-                
-                {/* Video player frame */}
-                <rect x="10" y="10" width="120" height="120" rx="4" fill="#9b87f5" opacity="0.8"/>
+                <rect width="16" height="9" fill="#1A1F2C"/>
                 
                 {/* Video content placeholder - abstract campus scene */}
-                <rect x="15" y="15" width="110" height="110" rx="2" fill="#D6BCFA" opacity="0.3"/>
-                <path d="M15 60h110M55 15v110M85 15v110" stroke="#7E69AB" strokeWidth="0.5" opacity="0.7"/>
+                <rect x="0" y="0" width="16" height="9" fill="#D6BCFA" opacity="0.2"/>
+                <path d="M0 4.5h16M8 0v9" stroke="#7E69AB" strokeWidth="0.05" opacity="0.4"/>
                 
                 {/* Buildings/campus silhouettes */}
-                <path d="M25 90V60h15v-10h10v-15h5v15h10v10h15v30z" fill="#7E69AB" opacity="0.8"/>
-                <path d="M95 90V40h20v50z" fill="#7E69AB" opacity="0.6"/>
-                <rect x="65" y="65" width="20" height="25" fill="#7E69AB" opacity="0.7"/>
-                <rect x="35" y="75" width="10" height="15" fill="#9b87f5" opacity="0.9"/>
-                
-                {/* Play button overlay */}
-                <circle cx="70" cy="70" r="20" fill="#1A1F2C" fillOpacity="0.7"/>
-                <path d="M65 58l15 12-15 12z" fill="#9b87f5"/>
-                
-                {/* Video title and info */}
-                <rect x="10" y="140" width="120" height="30" rx="4" fill="#7E69AB" opacity="0.2"/>
-                <text x="20" y="155" fontFamily="Arial" fontSize="10" fill="white" fontWeight="bold">INSTITUTE OVERVIEW</text>
-                <text x="20" y="165" fontFamily="Arial" fontSize="8" fill="white" opacity="0.7">Learn about our programs</text>
-                
-                {/* Video duration */}
-                <rect x="100" y="100" width="20" height="10" rx="5" fill="#1A1F2C" fillOpacity="0.8"/>
-                <text x="103" y="108" fontFamily="Arial" fontSize="7" fill="white">3:45</text>
+                <path d="M2 7V3h2V1.5h1V0.5h0.5v1h1v1.5h2v4z" fill="#7E69AB" opacity="0.7"/>
+                <path d="M10 7V2h3v5z" fill="#7E69AB" opacity="0.5"/>
+                <rect x="6" y="4" width="2" height="3" fill="#7E69AB" opacity="0.6"/>
+                <rect x="3" y="5" width="1" height="2" fill="#9b87f5" opacity="0.8"/>
               </svg>
+              
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-black bg-opacity-50 rounded-full p-5 transform transition-transform group-hover:scale-110">
+                  <Play size={48} className="text-white" />
+                </div>
+              </div>
+              
+              {/* Video duration */}
+              <div className="absolute bottom-3 right-3 bg-black bg-opacity-70 px-2 py-1 rounded text-white text-xs">
+                3:45
+              </div>
             </div>
           </div>
+          
+          <button
+            onClick={handlePlayVideo}
+            className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors transform hover:scale-[1.02] duration-200"
+          >
+            <Play className="mr-2 h-4 w-4" />
+            Watch Now
+          </button>
         </div>
-        <button
-          onClick={handlePlayVideo}
-          className="mt-4 flex w-full justify-center items-center px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors transform hover:scale-[1.02] duration-200"
-        >
-          <Play className="mr-2 h-4 w-4" />
-          Watch Now
-        </button>
       </div>
 
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
